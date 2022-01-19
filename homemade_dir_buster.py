@@ -8,7 +8,7 @@ invalid_dir_count = 0
 for dir in directories:
     dir_enum = f"http://{sys.argv[1]}/{dir}.html"
     dir_request = requests.get(dir_enum)
-    # print(dir_enum)
+    # print(f"{dir_enum} {dir_request.status_code}")
     if dir_request.status_code == 404:
         invalid_dir_count += 1
     else:
